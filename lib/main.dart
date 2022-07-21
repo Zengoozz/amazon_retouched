@@ -19,16 +19,22 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text(
             'Home',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.w800,
+            ),
           ),
-          centerTitle: true,
+          centerTitle: false,
           elevation: 0,
         ),
         body: Container(
-          color: Colors.blue,
+          color: Theme.of(context).primaryColor,
           child: Container(
-            padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-            color: Colors.white,
+            padding: const EdgeInsets.fromLTRB(5, 10, 5, 5),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(15),
+            ),
           ),
         ),
       ),
