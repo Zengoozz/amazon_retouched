@@ -130,7 +130,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   color: Colors.white,
                   padding: const EdgeInsets.all(8),
                   child: Form(
-                    key: _signUpFormKey,
+                    key: _signInFormKey,
                     child: Column(children: [
                       CustomTextField(
                         controller: _emailController,
