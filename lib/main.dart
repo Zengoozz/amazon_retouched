@@ -1,43 +1,33 @@
+import 'package:amazon_clone/features/auth/screens/auth_screen.dart';
+import 'package:amazon_clone/router.dart';
 import 'package:flutter/material.dart';
+import 'package:amazon_clone/constants/global_variables.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);  
+  const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Amazon Clone',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Home',
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.w800,
+        title: 'Amazon Clone',
+        theme: ThemeData(
+          scaffoldBackgroundColor: GlobalVariables.backgroundColor,
+          appBarTheme: const AppBarTheme(
+            elevation: 0,
+            iconTheme: IconThemeData(
+              color: Colors.black,
             ),
           ),
-          centerTitle: false,
-          elevation: 0,
-        ),
-        body: Container(
-          color: Theme.of(context).primaryColor,
-          child: Container(
-            padding: const EdgeInsets.fromLTRB(5, 10, 5, 5),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(15),
-            ),
+          colorScheme: const ColorScheme.light(
+            primary: GlobalVariables.secondaryColor,
           ),
         ),
-      ),
-    );
+        onGenerateRoute: ((settings) => generateRoute(settings)),
+        home: const AuthScreen());
   }
 }
